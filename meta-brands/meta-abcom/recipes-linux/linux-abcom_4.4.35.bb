@@ -9,7 +9,7 @@ COMPATIBLE_MACHINE = "^(pulse4k|pulse4kmini)$"
 
 SRCDATE = "20200219"
 
-inherit kernel machine_kernel_pr
+inherit kernel machine_kernel_pr serial-console
 
 MACHINE_KERNEL_PR:append = "4"
 

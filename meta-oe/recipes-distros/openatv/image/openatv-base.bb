@@ -28,6 +28,7 @@ RDEPENDS:${PN} = "\
     ${@bb.utils.contains("MACHINE_FEATURES", "nogui", "", "${NORMAL_GUI}", d)} \
     ${@bb.utils.contains("TUNE_FEATURES", "armv", "glibc-compat", "", d)} \
     ${@bb.utils.contains("SMALLBOXWIZARD", "1", "${SMALLBOXWIZARD_IMAGE}", "${NORMAL_IMAGE}", d)} \
+    ${@bb.utils.contains("SERIAL_DEBUG", "yes", "${DEBUG_IMAGE}", "", d)} \
 "
 
 NORMAL_GUI = "\
@@ -59,3 +60,5 @@ NORMAL_IMAGE = "\
     zip \
     ofgwrite \
 "
+
+DEBUG_IMAGE = "gdb strace upx"
